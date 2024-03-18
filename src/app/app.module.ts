@@ -9,7 +9,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 
  
@@ -18,6 +18,15 @@ import { NbThemeModule } from '@nebular/theme';
 import { NbCardModule,NbStepperModule  } from '@nebular/theme';
 import { Stepper1Component } from './stepper1/stepper1.component';
 import { CdkStepperModule } from '@angular/cdk/stepper';
+import { Stepper2Component } from './stepper2/stepper2.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { FormComponent } from './form/form.component';
+import { DentEntrepriseDeclaranteComponent } from './steppers/dent-entreprise-declarante/dent-entreprise-declarante.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { AsyncPipe } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ServiceService } from './service.service';
  
  
 
@@ -25,7 +34,13 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
   declarations: [
     AppComponent,
     StepperComponent,
-    Stepper1Component
+    Stepper1Component,
+    Stepper2Component,
+    SignUpComponent,
+    SignInComponent,
+    FormComponent,
+    DentEntrepriseDeclaranteComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -40,9 +55,16 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
     NbStepperModule,
     MatStepperModule,
     CdkStepperModule,
-    NbStepperModule
-  ],
-  providers: [],
+    NbStepperModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AsyncPipe, 
+   ],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

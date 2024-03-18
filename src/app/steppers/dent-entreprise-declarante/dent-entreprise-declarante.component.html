@@ -1,0 +1,118 @@
+<div class="container">
+
+  <form [formGroup]="stepOneForm" (ngSubmit)="stepOneSubmit()" autocomplete="off" novalidate #formRef="ngForm">
+
+    <div class="row">
+      <div class="col-6">
+        <div class="input">
+          <label for="RaisonSociale">Raison Sociale<span>*</span></label>
+          <input type="text" id="RaisonSociale" placeholder="Raison Sociale" formControlName="RaisonSociale" />
+          <span class="error"
+            *ngIf="stepOneForm.controls['RaisonSociale'].hasError('required') && formRef.submitted">Raison
+            Sociale is a required field
+          </span>
+        </div>
+      </div>
+
+     <div class="col-6">
+      <div class="input">
+        <label for="qualiteEntreprise">Qualité Entreprise<span>*</span></label>
+        <select id="qualiteEntreprise" formControlName="qualiteEntreprise"  >
+          <option value="Entité mère ultime">Entité mère ultime</option>
+          <option value="Entité mère non ultime">Entité mère non ultime</option>
+          <option value="Entreprise holding">Entreprise holding</option>
+          <option value="Entreprise filiale">Entreprise filiale</option>
+          <option value="Etablissement stable">Etablissement stable</option>
+          <option value="Autres">Autres</option>
+        </select>
+        
+        <!-- Input field for "Autres" option -->
+        <input *ngIf="showInputField" type="text" formControlName="autreInput" placeholder="Spécifiez...">
+      </div>
+</div>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col-6">
+        <div class="input">
+          <label for="FormeJuridique">Forme Juridique<span>*</span></label>
+          <input type="text" id="FormeJuridique" placeholder="Forme Juridique" formControlName="FormeJuridique" />
+          <span class="error"
+            *ngIf="stepOneForm.controls['FormeJuridique'].hasError('required') && formRef.submitted">Forme Juridique is
+            a
+            required field
+          </span>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="input">
+          <label for="AdresseSiegeSocial ">Adresse Siege Social Etablissement Tunisie<span>*</span></label>
+          <input type="text" id="AdresseSiegeSocial" placeholder="Adresse Siege Social"
+            formControlName="AdresseSiegeSocial" />
+          <span class="error"
+            *ngIf="stepOneForm.controls['AdresseSiegeSocial'].hasError('required') && formRef.submitted">Adresse Siege
+            Social is a required field
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-6">
+        <div class="input">
+          <label for="CodePostal">Code Postal<span>*</span></label>
+          <input type="text" id="CodePostal" placeholder="Code Postal" formControlName="CodePostal" />
+          <span class="error" *ngIf="stepOneForm.controls['CodePostal'].hasError('required') && formRef.submitted">Code
+            Postal is a
+            required field
+          </span>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="input">
+          <label for="ChiffreAffaireAnnuel ">Chiffre Affaire Annuel<span>*</span></label>
+          <input type="text" id="AdresseSiegeSocial" placeholder="Chiffre Affaire Annuel"
+            formControlName="ChiffreAffaireAnnuel" />
+          <span class="error"
+            *ngIf="stepOneForm.controls['AdresseSiegeSocial'].hasError('required') && formRef.submitted">Chiffre Affaire
+            Annuel is a required field
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+      <div class="col-6">
+        <div class="input">
+          <label for="PDC">ActivitePrincipale<span>*</span></label>
+          <input type="text" id="ActivitePrincipale" placeholder="ActivitePrincipale"
+            formControlName="ActivitePrincipale" />
+          <span class="error"
+            *ngIf="stepOneForm.controls['ActivitePrincipale'].hasError('required') && formRef.submitted">ActivitePrincipale
+            is a required field
+          </span>
+        </div>
+
+      </div>
+      <div class="col-6">
+        <div class="input">
+          <label for="ActiviteSecondaire">ActiviteSecondaire<span>*</span></label>
+          <input type="text" id="ActiviteSecondaire" placeholder="ActiviteSecondaire" />
+
+        </div>
+      </div>
+    </div>
+
+    <div class="button">
+      <button class="button" cdkStepperNext>Next</button>
+    </div>
+
+  </form>
+</div>
