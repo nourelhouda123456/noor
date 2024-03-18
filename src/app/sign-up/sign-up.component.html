@@ -1,98 +1,104 @@
-
- 
- 
- 
- 
- 
- 
- 
-  
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- <section class="background-radial-gradient overflow-hidden">
- 
-
-    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-      <div class="row gx-lg-5 align-items-center mb-5">
-        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-            Déclaration Prix De Transfert <br />
-            <span style="color: hsl(218, 81%, 75%)">pour votre entreprise
-              </span>
-          </h1>
-          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-            Ce service s’inscrit dans le cadre de la dématérialisation des procédures, de la facilitation des démarches aux contribuables et de l’incitation à l’accomplissement des obligations fiscales. <br>
-  
-  Le dépôt dématérialisé des déclarations de prix de transfert permettra la constitution d’une base de données comptable et fiscale fiable pour l’administration fiscale.
-          </p>
-        </div>
-  
-        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-  
-          <div class="card bg-glass">
-            <div class="card-body px-4 py-5 px-md-5">
-              <form (ngSubmit)="registerUser(newUser)" #loginForm="ngForm">
-                <!-- 2 column grid layout with text inputs for the first and last names -->
-                <div class="row">
-                   
-                    <div class="form-outline">
-                      <label for="form3Example1">First name</label>
-                      <input  type="text" id="form3Example1" class="form-control" placeholder="First name" [ngModelOptions]="{ standalone: true }" required [(ngModel)]="newUser.username" />
+<!-- component -->
+<div class="h-screen md:flex">
+	<div
+		class="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden">
+		<div>
+			<h1 class="text-white font-bold text-4xl font-sans">GoFinance</h1>
+			<p class="text-white mt-2 text-4xl">Déclaration prix de transfert</p>
+			<button [routerLink]="['/SignIn']" type="submit" class="block w-28 bg-white text-indigo-800 mt-4 py-2 rounded-2xl font-bold mb-2"> Se Connecter</button>
+		</div>
+		<div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+		<div class="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+		<div class="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+		<div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+	</div>
+	<div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
+		<form   (ngSubmit)="registerUser(newUser)" #loginForm="ngForm">
+			<h1 class="text-gray-800 font-bold text-6xl mb-4  " >Bienvenue</h1>
+			<p class="font-bold text-gray-600 mb-7 text-xl" >dans notre application</p>
 
 
-                     
-                    </div>
-                  </div>
-                   
-               
-  
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                  <label for="form3Example1">Email Address</label>
-                  <input type="text" id="form3Example3" class="form-control" placeholder="Email Address" [(ngModel)]="newUser.email"  [ngModelOptions]="{ standalone: true }"/>
-                  
-                </div>
-  
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <label for="form3Example2">Passowrd</label>
-                  <input type="password" id="form3Example4" class="form-control" placeholder="Passowrd"  [(ngModel)]="newUser.password"  [ngModelOptions]="{ standalone: true }"/>
-                   
-                </div>
-  
-                <!-- Checkbox -->
-                <div class="form-check d-flex justify-content-center mb-4">
-                   
-                  <p> Have an Account? <a [routerLink]="['/SignIn']" > Login Now!</a></p>
-                </div>
-  
-               
-                <!-- Submit button -->
-                <div class="form-check d-flex justify-content-center mb-4">
-                <button type="submit" class="btn btn-primary btn-block  ">
-                  Sign up
-                </button>
-                </div>
-  
-                 
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <circle cx="12" cy="6" r="4"  class="h-5 w-5 text-gray-400" stroke-width="1.5"></circle>
+                <path d="M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z"  class="h-5 w-5 text-gray-400"  stroke-width="1.5"></path>
+            </g>
+        </svg>
+        
+        <input  [ngModelOptions]="{ standalone: true }" required [(ngModel)]="newUser.firstName" type="text"   class="form-control"class="pl-2 outline-none border-none"   name="username" id="username" placeholder="Nom"  >
     </div>
-  </section>
-   
+    
+  
+
+
+
+    <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400"  fill="none"
+      viewBox="0 0 24 24" stroke="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier"> <circle cx="12" cy="6" r="4"  class="h-5 w-5 text-gray-400"  stroke-width="1.5"></circle> 
+          <path d="M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z"  class="h-5 w-5 text-gray-400" stroke-width="1.5"></path> </g>
+      </svg>
+      <input   [ngModelOptions]="{ standalone: true }" required [(ngModel)]="newUser.lastName" class="form-control" type="text" class="pl-2 outline-none border-none" 
+        name="username" id="username"  placeholder="Prénom"  >
+       
+    </div>
+
+
+			
+				
+					<div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
+							viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+						</svg>
+						<input  [ngModelOptions]="{ standalone: true }" required [(ngModel)]="newUser.login" class="form-control" class="pl-2 outline-none border-none"   type="text" name="email" id="email" placeholder=" Address Email"  />
+      
+          </div>
+     
+						<div class="flex items-center border-2 py-2 px-3 rounded-2xl">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+								fill="currentColor">
+								<path fill-rule="evenodd"
+									d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+									clip-rule="evenodd" />
+							</svg>
+							<input  [ngModelOptions]="{ standalone: true }" required [(ngModel)]="newUser.password"  class="form-control" class="pl-2 outline-none border-none" type="text"  name="Password" id="Password" placeholder="Mot de Passe"   />
+      </div>
+							<button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"   >S'inscrire</button>
+							 
+              
+		</form>
+	</div>
+</div>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+ 
+  
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

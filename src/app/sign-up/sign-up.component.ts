@@ -12,9 +12,10 @@ import { throwError } from 'rxjs';
 })
 export class SignUpComponent {
   newUser: User = {
-    username: "",
-    email: "",
-    password: ""
+    firstName: "",
+      lastName :"",
+      login:  "",
+      password:  ""
   };
 
   constructor(private userService: ServiceService) {}
@@ -22,7 +23,7 @@ export class SignUpComponent {
   registerUser(newUser: User): void {
     console.log(newUser);
 
-    this.userService.test().subscribe(Response =>{
+    this.userService.register(newUser).subscribe(Response =>{
       console.log("resp",Response);
       
     });

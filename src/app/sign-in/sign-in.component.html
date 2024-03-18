@@ -1,66 +1,60 @@
- 
- <section class="background-radial-gradient overflow-hidden">
- 
-
-  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-    <div class="row gx-lg-5 align-items-center mb-5">
-      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-          Déclaration Prix De Transfert <br />
-          <span style="color: hsl(218, 81%, 75%)">pour votre entreprise
-            </span>
-        </h1>
-        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-          Ce service s’inscrit dans le cadre de la dématérialisation des procédures, de la facilitation des démarches aux contribuables et de l’incitation à l’accomplissement des obligations fiscales. <br>
-
-Le dépôt dématérialisé des déclarations de prix de transfert permettra la constitution d’une base de données comptable et fiscale fiable pour l’administration fiscale.
-        </p>
+ <!-- component -->
+<div class="h-screen md:flex">
+	<div
+		class="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden">
+		<div>
+			<h1 class="text-white font-bold text-4xl font-sans">GoFinance</h1>
+			<p class="text-white mt-2 text-4xl">Déclaration prix de transfert</p>
+			<button [routerLink]="['/SignUp']" type="submit" class="block w-28 bg-white text-indigo-800 mt-4 py-2 rounded-2xl font-bold mb-2">S'inscrire</button>
+		</div>
+		<div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+		<div class="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+		<div class="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+		<div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+	</div>
+	<div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
+		 <form class="bg-white" (ngSubmit)="loginUser(newUser)" #loginForm="ngForm"> 
+			<h1 class="text-gray-800 font-bold text-6xl mb-4  " >Bienvenue</h1>
+			<p class="font-bold text-gray-600 mb-7 text-xl" >dans notre application</p>
+			
+				
+					<div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
+							viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+						</svg>
+						<input class="pl-2 outline-none border-none" [(ngModel)]="newUser.login" type="text" name="email" id="email" placeholder="Email Address" />
       </div>
-
-      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-
-        <div class="card bg-glass">
-          <div class="card-body px-4 py-5 px-md-5">
-            <form (ngSubmit)="loginUser(newUser)" #loginForm="ngForm">
-              <br><br><br>
-
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example3">Email address</label>
-                <input type="text" id="form3Example3" class="form-control" placeholder="Email Address" [(ngModel)]="newUser.login"  [ngModelOptions]="{ standalone: true }"/>
-               
-              </div>
-
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example4">Password</label>
-                <input type="password" id="form3Example4" class="form-control" placeholder="Passowrd"  [(ngModel)]="newUser.password"  [ngModelOptions]="{ standalone: true }"/>
-                   
-               
-              </div>
-
-              <!-- Checkbox -->
-              <div class="form-check d-flex justify-content-center mb-4">
-                 
-                <p>Don't have an Account? <a  [routerLink]="['/SignUp']"> Register Now!</a></p>
-              </div>
-
-             
-              <!-- Submit button -->
-              <div class="form-check d-flex justify-content-center mb-4">
-              <button type="submit" class="btn btn-primary btn-block  " [routerLink]="['/SignIn']" >
-                Sign up
-              </button>
-              </div>
-
-               
-            </form>
-          </div>
-        </div>
+     
+						<div class="flex items-center border-2 py-2 px-3 rounded-2xl">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+								fill="currentColor">
+								<path fill-rule="evenodd"
+									d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+									clip-rule="evenodd" />
+							</svg>
+							<input class="pl-2 outline-none border-none" type="password" [(ngModel)]="newUser.password" name="Password" id="Password" placeholder="Password" />
       </div>
-    </div>
-  </div>
-</section>
+							<button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"   >Se Connecter</button>
+						 
+               
+              
+		</form>
+	</div>
+</div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  

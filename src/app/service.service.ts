@@ -24,10 +24,10 @@ export class ServiceService {
       })
     };
     const user= {
-      firstName:"ddd",
-      lastName :"fvd",
-      login: "efe",
-      password: "fe"
+      firstName:" ",
+      lastName :" ",
+      login: " ",
+      password: " "
     }
     return this.http.post("http://localhost:8080/register", user);
 
@@ -35,7 +35,7 @@ export class ServiceService {
   register(user: User){
     
     
-    return this.http.post("http://localhost:8080/api/v1/auth/register", user);
+    return this.http.post(`${this.baseUrl}/register`, user);
   }
 
   login(user: credentials){
