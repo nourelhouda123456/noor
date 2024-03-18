@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { User } from '../User';
+import { credentials } from '../models/Credentials';
+import { fromJSON } from 'postcss';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,9 +10,8 @@ import { User } from '../User';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent {
-  newUser: User = {
-    username: "",
-    email: "",
+  newUser: credentials = {
+    login: "",
     password: ""
   };
 
@@ -18,10 +19,14 @@ export class SignInComponent {
  
   constructor(private userService: ServiceService) {}
    
-  loginUser(newUser: User): void {
+  loginUser(newUser: credentials): void {
     console.log(newUser);
     
-    console.log(this.userService.login(newUser));
+    this.userService.login(newUser).subscribe((resp :any)=>{
+      
+          var token = resp.token;
+            document.cookie = `token=${token}; path=/; expires=`;
+    });
     
   }
 

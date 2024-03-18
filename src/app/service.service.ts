@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { User } from './User';
 import { HttpHeaders } from '@angular/common/http';
+import { credentials } from './models/Credentials';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,7 @@ export class ServiceService {
   // Update the URL with your Spring Boot app's base URL
   baseUrl :String | undefined;
   constructor(private http: HttpClient) {
-     this.baseUrl = ' http://localhost:8080/api/v1/auth/';
+     this.baseUrl = 'http://localhost:8080';
    }
 
 
@@ -37,8 +38,8 @@ export class ServiceService {
     return this.http.post("http://localhost:8080/api/v1/auth/register", user);
   }
 
-  login(user: User): Observable<boolean> {
-    return this.http.post<boolean>(`${this.baseUrl}/authenticate`, user);
+  login(user: credentials){
+    return this.http.post(`${this.baseUrl}/login`, user);
   }
 }
 function throwError(error: any): any {
